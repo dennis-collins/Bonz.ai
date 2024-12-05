@@ -105,27 +105,235 @@ a:hover {
   }
 }
 
-section {
+.index-section {
   background: url(img/photos/09-day.jpg) no-repeat;
   background-size: cover;
   height: calc(100vh - 80px);
 }
 
-/* Index components */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+.about-section {
+  background: url(img/photos/07-day.avif);
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
-.landing-title {
-  font-size: 100px;
+.booking-section {
+  background: url(img/photos/06-day.avif);
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+/* Index components */
+.front-container {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-areas:
+    "blanktop blanktop blanktop"
+    "blankleft title blankright"
+    "blankbottom blankbottom blankbottom";
+}
+
+.front-title {
+  grid-area: title;
+  font-size: 80px;
+  color: #36836c;
+  padding: 20px;
+  background: #c1f8ff;
+  border-radius: 15px;
+}
+
+.front-bottom {
+  grid-area: blankbottom;
+  font-size: 20px;
+}
+
+@media (max-width: 858px) {
+  .front-title {
+    font-size: 50px;
+  }
+}
+
+/* Facilities */
+.about-section__title-container {
+  text-align: center;
+}
+
+.about-section__title {
+  font-size: 20px;
+  color: #36836c;
+  background-color: #c1f8ff;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 32px;
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.about-section__facility-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 90px;
+  gap: 30px;
+}
+
+.about-section__facility {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.about-section__facility-details {
+  padding: 2px 16px;
+}
+
+.about-section__facility-image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.about-section__read-more {
+  background-color: #25d39f;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.read-more a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Booking components */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 10px;
+}
+
+.booking-container {
+  background: white;
+  width: 800px;
+  max-width: 800px;
+  padding: 25px 40px 10px 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-container .booking-text {
+  font-size: 35px;
+  color: #36836c;
+  font-weight: 650;
+  text-align: center;
+}
+
+.booking-container form {
+  padding: 30px 0 0 0 0;
+}
+
+.booking-container form .form-row {
+  display: flex;
+  margin: 32px 0;
+}
+
+#results {
+  display: none;
+}
+
+form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+
+form .form-row .submitbutton {
+  height: 70px;
+}
+
+.input-data input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.input-data label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-data input:focus ~ label {
+  transform: translateY(-20px);
+  color: #36836c;
+  font-size: 14px;
+}
+
+.search-btn {
+  background-color: #25d39f;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px 25px;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+@media (max-width: 858px) {
+  .booking-container .booking-text {
+    font-size: 30px;
+  }
+
+  .booking-container form {
+    padding-left: 10px 0 0 0 0;
+  }
+
+  .booking-container form .form-row {
+    display: block;
+  }
+
+  .submitbutton {
+    width: 50px;
+  }
 }
 
 /* Footer components */
 footer {
-  position: fixed;
-  bottom: 0px;
+  position: flow;
+  bottom: 0;
   width: 100%;
   background: #54eabd;
   color: white;
