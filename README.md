@@ -1,4 +1,4 @@
-Bonz.ai Hotel Project
+<strong>Bonz.ai Hotel Project</strong>
 
 Thu, 05/12/2024 - Completed
 
